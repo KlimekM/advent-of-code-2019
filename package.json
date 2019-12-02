@@ -1,0 +1,31 @@
+{
+  "name": "advent-of-code-2019",
+  "version": "1.0.0",
+  "description": "Advent of Code 2019",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KlimekM/advent-of-code-2019.git"
+  },
+  "keywords": [
+    "advent",
+    "of",
+    "code",
+    "2019"
+  ],
+  "author": "Michal Klimek <mklimek15@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KlimekM/advent-of-code-2019/issues"
+  },
+  "homepage": "https://github.com/KlimekM/advent-of-code-2019#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.14",
+    "jest": "^24.9.0",
+    "typescript": "^3.7.2"
+  }
+}
