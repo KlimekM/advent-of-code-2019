@@ -1,4 +1,4 @@
-import { convertTxtFileToArray } from './../../util/convert-input';
+import { convertSeveralLineTxtFileToArray } from './../../util/convert-input';
 import { calculateFuelRequiredForModuleAndAddedFuel, sumOfFuelRequiredForAllModulesAndFuel } from "../part-2";
 
 describe('Day 1 - Part 2', () => {
@@ -15,7 +15,7 @@ describe('Day 1 - Part 2', () => {
   });
 
   it('returns the correct value for the sum of all of the values in the input file', () => {
-    const dayOnePartOneInputArray = convertTxtFileToArray('day-01');
+    const dayOnePartOneInputArray = convertSeveralLineTxtFileToArray('day-01');
     expect(sumOfFuelRequiredForAllModulesAndFuel(dayOnePartOneInputArray)).toBe(4974428);
   });
 });
