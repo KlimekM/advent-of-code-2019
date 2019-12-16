@@ -1,4 +1,4 @@
-enum StepDirection {
+export enum StepDirection {
   Left = 'L',
   Right = 'R',
   Down = 'D',
@@ -17,7 +17,7 @@ function getAllWirePositions(wireInstructions: string[]): Set<string> {
     switch(stepDirection) {
       case StepDirection.Left:
         const xPositionLeft = currentXPosition - numberOfSteps;
-        for (let i = currentXPosition; i >= xPositionLeft; i--) {
+        for (let i = currentXPosition; i > xPositionLeft; i--) {
           positions.add(`${i},${currentYPosition}`);
         };
 
@@ -25,7 +25,7 @@ function getAllWirePositions(wireInstructions: string[]): Set<string> {
         break;
       case StepDirection.Right:
         const xPositionRight = currentXPosition + numberOfSteps;
-        for (let i = currentXPosition; i <= xPositionRight; i++) {
+        for (let i = currentXPosition; i < xPositionRight; i++) {
           positions.add(`${i},${currentYPosition}`);
         };
 
@@ -33,7 +33,7 @@ function getAllWirePositions(wireInstructions: string[]): Set<string> {
         break;
       case StepDirection.Down:
         const yPositionDown = currentYPosition - numberOfSteps;
-        for (let i = currentYPosition; i >= yPositionDown; i--) {
+        for (let i = currentYPosition; i > yPositionDown; i--) {
           positions.add(`${currentXPosition},${i}`);
         };
 
@@ -41,7 +41,7 @@ function getAllWirePositions(wireInstructions: string[]): Set<string> {
         break;
       case StepDirection.Up:
         const yPositionUp = currentYPosition + numberOfSteps;
-        for (let i = currentYPosition; i <= yPositionUp; i++) {
+        for (let i = currentYPosition; i < yPositionUp; i++) {
           positions.add(`${currentXPosition},${i}`);
         };
 
@@ -65,7 +65,6 @@ function getWireIntersectionPoints(firstWirePositions: Set<string>, secondWirePo
 }
 
 function getShortestIntersectionPointDistance(intersectionPoints: string[]): number {
-
   const intersectionPointsAsNumberCoordinates = intersectionPoints.map(point => point.split(',').map(Number));
 
   const intersectionPointDistances = intersectionPointsAsNumberCoordinates.map(coordinates => Math.abs(coordinates[0]) + Math.abs(coordinates[1]));
